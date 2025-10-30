@@ -64,8 +64,9 @@ CRAM provides a unified platform that:
 - **Adaptive Capacity (30%)**: Resources, governance, infrastructure
 
 **Formula:**
-
+```
 BRRS = (Hazard_Exposure × 0.40) + (Health_Sensitivity × 0.30) + (Adaptive_Capacity × 0.30)
+```
 
 **Risk Classification:**
 - 🟢 **Low Risk**: BRRS < 30
@@ -197,7 +198,7 @@ BRRS = (Hazard_Exposure × 0.40) + (Health_Sensitivity × 0.30) + (Adaptive_Capa
 ---
 
 ## 🏗️ System Architecture
-
+```
 ┌─────────────────────────────────────────────────────────┐
 │              PRESENTATION LAYER (Frontend)               │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌─────────┐│
@@ -206,7 +207,7 @@ BRRS = (Hazard_Exposure × 0.40) + (Health_Sensitivity × 0.30) + (Adaptive_Capa
 │  └──────────┘  └──────────┘  └──────────┘  └─────────┘│
 │          Next.js 16 + React 19 + Tailwind CSS           │
 └────────────────────────┬────────────────────────────────┘
-│ REST API (JSON/GeoJSON)
+                         │ REST API (JSON/GeoJSON)
 ┌────────────────────────▼────────────────────────────────┐
 │            APPLICATION LAYER (Backend)                   │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
@@ -215,7 +216,7 @@ BRRS = (Hazard_Exposure × 0.40) + (Health_Sensitivity × 0.30) + (Adaptive_Capa
 │  └──────────────┘  └──────────────┘  └──────────────┘ │
 │        Django 4.2 + Python 3.10 + GeoDjango             │
 └────────────────────────┬────────────────────────────────┘
-│
+                         │
 ┌────────────────────────▼────────────────────────────────┐
 │                DATA LAYER                                │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
@@ -225,6 +226,7 @@ BRRS = (Hazard_Exposure × 0.40) + (Health_Sensitivity × 0.30) + (Adaptive_Capa
 │  └──────────────┘  └──────────────┘  └──────────────┘ │
 │            516 Barangays + Hazard Data                   │
 └─────────────────────────────────────────────────────────┘
+```
 
 ### Data Flow
 
@@ -240,7 +242,6 @@ BRRS = (Hazard_Exposure × 0.40) + (Health_Sensitivity × 0.30) + (Adaptive_Capa
 ## 🚀 Installation
 
 ### Quick Start
-
 ```bash
 # Clone repository
 git clone https://github.com/marieeposa/cram.git
@@ -248,6 +249,7 @@ cd cram
 
 # Follow detailed installation guide
 See INSTALLATION.md for complete step-by-step instructions
+```
 
 ### Prerequisites
 
@@ -264,118 +266,119 @@ See INSTALLATION.md for complete step-by-step instructions
 - 📖 [Frontend Setup](cram-frontend/README.md)
 - 📖 [Data Setup](DATA.md)
 
------
+---
 
 ## 📖 Usage
 
 ### For Barangay Officials
 
-1. *View Risk Score*: Navigate to Barangays → Search your barangay
-1. *Get Recommendations*: Click barangay → View AI recommendations
-1. *Request Support*: Go to Support Network → Submit request
-1. *Export Report*: View barangay profile → Export PDF
+1. **View Risk Score**: Navigate to Barangays → Search your barangay
+2. **Get Recommendations**: Click barangay → View AI recommendations
+3. **Request Support**: Go to Support Network → Submit request
+4. **Export Report**: View barangay profile → Export PDF
 
 ### For Municipal Planners
 
-1. *View Overview*: Select municipality from dropdown
-1. *Analyze Trends*: Review charts and statistics
-1. *Generate Report*: Click “AI Strategic Report”
-1. *Coordinate Resources*: Check Support Network for requests
+1. **View Overview**: Select municipality from dropdown
+2. **Analyze Trends**: Review charts and statistics
+3. **Generate Report**: Click "AI Strategic Report"
+4. **Coordinate Resources**: Check Support Network for requests
 
 ### For Researchers
 
 Access data via API:
-
+```bash
 # Get all barangays
 curl http://127.0.0.1:8000/api/barangays/
 
 # Get GeoJSON format
 curl http://127.0.0.1:8000/api/barangays/?format=geojson
+```
 
------
+---
 
 ## 📡 API Documentation
 
 ### Base URL
-
+```
 http://127.0.0.1:8000/api
+```
 
 ### Key Endpoints
 
-*Barangays*
+**Barangays**
+- `GET /barangays/` - List all barangays
+- `GET /barangays/{id}/` - Get barangay details
+- `GET /barangays/statistics/` - System statistics
+- `GET /barangays/high-risk/` - High-risk barangays
 
-- GET /barangays/ - List all barangays
-- GET /barangays/{id}/ - Get barangay details
-- GET /barangays/statistics/ - System statistics
-- GET /barangays/high-risk/ - High-risk barangays
+**Municipalities**
+- `GET /municipalities/` - List municipalities
+- `GET /municipalities/{id}/` - Municipality details
 
-*Municipalities*
+**Hazards**
+- `GET /noah-flood/` - NOAH flood data
+- `GET /storm-surge/` - Storm surge data
+- `GET /liquefaction/` - Liquefaction data
 
-- GET /municipalities/ - List municipalities
-- GET /municipalities/{id}/ - Municipality details
-
-*Hazards*
-
-- GET /noah-flood/ - NOAH flood data
-- GET /storm-surge/ - Storm surge data
-- GET /liquefaction/ - Liquefaction data
-
------
+---
 
 ## 📊 Data Sources
 
 ### Government Data
 
-*NOAH (Nationwide Operational Assessment of Hazards)*
-
+**NOAH (Nationwide Operational Assessment of Hazards)**
 - Source: DOST-PHIVOLCS
 - Data: Flood and landslide hazard maps
 - Format: Shapefiles
 - Coverage: All 516 barangays
 
-*Philippine Statistics Authority (PSA)*
-
+**Philippine Statistics Authority (PSA)**
 - Source: 2020 Census
 - Data: Demographics, households
 - Format: CSV
 - Granularity: Barangay-level
-*Data Repository:**
-📥 <https://drive.google.com/drive/folders/1axE500Yv-WhtxLzNXc8321WtM2GPSbaX>
 
-See <DATA.md> for complete data documentation.
+**Data Repository:**
+📥 https://drive.google.com/drive/folders/1axE500Yv-WhtxLzNXc8321WtM2GPSbaX
 
------
+See [DATA.md](DATA.md) for complete data documentation.
 
-*Partners:*
+---
 
+**Partners:**
 - Negros Oriental Provincial Government
 - Provincial DRRMO
 - DOST - Project NOAH
 - Philippine Statistics Authority
 
------
+---
 
 ## 🙏 Acknowledgments
 
 Special thanks to:
-
 - Government agencies for hazard data
 - Groq for AI platform access
 - OpenWeatherMap for weather data
 - Open source community
 - Local communities in Negros Oriental
 
------
+---
 
 ## 📈 Statistics
 
-- *Lines of Code*: 15,000+
-- *Barangays*: 516
-- *Population*: 1.5M+
-- *API Endpoints*: 15+
--*Contributors**: 10+
+- **Lines of Code**: 15,000+
+- **Barangays**: 516
+- **Population**: 1.5M+
+- **API Endpoints**: 15+
+- **Contributors**: 10+
 
+---
 
-*Built with ❤️ for climate-resilient communities in Negros Oriental*
+**Built with ❤️ for climate-resilient communities in Negros Oriental**
 
-Protecting lives through data-driven climate resilience
+*Protecting lives through data-driven climate resilience*
+
+*Last Updated: November 1, 2025*  
+*Version: 1.0.0*  
+*Repository: https://github.com/marieeposa/cram*
