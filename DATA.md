@@ -370,8 +370,3 @@ pd.read_csv('file.csv', encoding='cp1252')
 for chunk in pd.read_csv('large_file.csv', chunksize=10000):
     process_chunk(chunk)
 ```
-
-
-**Last Updated:** November 1, 2025  
-**Version:** 1.0.0  
-**Maintainer:** CRAM Data Team
