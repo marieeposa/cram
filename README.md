@@ -259,13 +259,6 @@ See INSTALLATION.md for complete step-by-step instructions
 - GDAL 3.4+
 - Git
 
-### Installation Guides
-
-- 📖 [Complete Installation Guide](INSTALLATION.md)
-- 📖 [Backend Setup](cram-backend/README.md)
-- 📖 [Frontend Setup](cram-frontend/README.md)
-- 📖 [Data Setup](DATA.md)
-
 ---
 
 ## 📖 Usage
