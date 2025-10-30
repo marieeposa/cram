@@ -371,7 +371,3 @@ Special thanks to:
 **Built with ❤️ for climate-resilient communities in Negros Oriental**
 
 *Protecting lives through data-driven climate resilience*
-
-*Last Updated: November 1, 2025*  
-*Version: 1.0.0*  
-*Repository: https://github.com/marieeposa/cram*
