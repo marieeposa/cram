@@ -375,35 +375,7 @@ Special thanks to:
 - *API Endpoints*: 15+
 -*Contributors**: 10+
 
------
-
-## 🗺️ Roadmap
-
-### ✅ Phase 1: Foundation (Complete)
-
-- [x] Backend API with PostGIS
-- [x] Frontend dashboard
-- [x] Interactive risk map
-- [x] AI integration
-- [x] Support network
-
-### 🚧 Phase 2: Enhancement (Q4 2025)
-
-- [ ] Email notifications
-- [ ] SMS alerts
-- [ ] User authentication
-- [ ] Mobile app
-
-### 📅 Phase 3: Expansion (2026)
-
-- [ ] Scale to Visayas provinces
-- [ ] Predictive modeling
-- [ ] IoT sensor integration
-
------
 
 *Built with ❤️ for climate-resilient communities in Negros Oriental*
 
 Protecting lives through data-driven climate resilience
-Version: 1.0.0  
-Repository: https://github.com/marieeposa/cram
